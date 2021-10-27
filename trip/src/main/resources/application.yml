@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/jspdb?serverTimezone=Asia/Seoul
+    username: root
+    password: 1234
+
+  thymeleaf:
+    cache: false # true 시 타임리프가 캐시를 사용해 변경사항이 반영되지 않을 수 있습니다
+
+  devtools:
+    livereload:
+      enabled: true # true 시 서버를 재시작하지 않아도 resources 폴더의 변경 사항이 바로 반영
+    restart:
+      enabled: true # true 시 서버를 재시작하지 않아도 .java 파일의 변경사항 반영
+
+#  servlet:
+#    multipart:
+#      max-file-size: 10MB
+#      max-request-size: 10MB
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+
+file:
+  upload:
+    location: C:\Users\yeon\Desktop\spring\img // 파일 저장될 위치

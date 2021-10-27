@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>read</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>글번호</td>
+            <td th:text="${board.num}"></td>
+        </tr>
+        <tr>
+            <td>작성자</td>
+            <td th:text="${board.writer}"></td>
+        </tr>
+        <tr>
+            <td>제목</td>
+            <td th:text="${board.subject}"></td>
+        </tr>
+        <tr>
+            <td>내용</td>
+            <td th:text="${board.content}"></td>
+        </tr>
+    </table>
+
+    <a th:href="@{/boards/update(num=${board.num})}">글수정</a>
+    <a th:href="@{/boards/delete(num=${board.num})}">글삭제</a>
+</body>
+</html>

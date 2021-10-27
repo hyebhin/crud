@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>read</title>
+</head>
+<body>
+  <table border="1">
+    <tr>
+        <td>글번호</td>
+        <td>작성자</td>
+        <td>제목</td>
+    </tr>
+
+      <tr th:each="list : ${list}">
+          <td th:text="${list.num}"></td>
+          <td th:text="${list.writer}"></td>
+          <td> <a th:text="${list.subject}" th:href="@{/boards/read(num=${list.num})}"></a></td>
+      </tr>
+
+  </table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gather.trip.mapper.BoardMapper">
+
+    <insert id="create">
+        insert into test_board (num, writer, subject, content)
+        values (#{num}, #{writer}, #{subject}, #{content})
+    </insert>
+
+    <select id="getList" resultType="com.gather.trip.domain.BoardVO">
+        select * from test_board order by num desc
+    </select>
+    
+    <select id="getBoard" resultType="com.gather.trip.domain.BoardVO">
+        select * from test_board where num = ${num}
+    </select>
+
+    <delete id="delete">
+        delete from test_board where num = ${num}
+    </delete>
+
+    <update id="modify">
+        UPDATE test_board
+        SET subject = #{subject},
+            content = #{content}
+        WHERE num = #{num};
+    </update>
+</mapper>

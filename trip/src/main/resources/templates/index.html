@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+    <h1>Index Page 수정2</h1>
+    <h2> <span th:text="${name}"></span>님 접속 </h2> <!-- 타임리프 사용하면 기존 작성 텍스트 사라짐-->
+    <a href="/boards/insert">글쓰기</a>
+    <a href="/boards/list">리스트</a>
+</body>
+</html>
